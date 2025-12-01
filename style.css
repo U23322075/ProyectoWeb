@@ -1,0 +1,932 @@
+/* Logo en la barra de navegación */
+.navbar .extra-img {
+  height: 80px;      /* ajusta este valor a tu gusto: 30, 40, 50... */
+  width: auto;       /* mantiene la proporción */
+  margin-right: 10px; /* separa un poco del texto J&P */
+}
+
+/* Opcional: aún más pequeño en pantallas chicas */
+@media (max-width: 768px) {
+  .navbar .extra-img {
+    height: 30px;
+  }
+}
+/* ===========================
+   ESTILOS GENERALES
+   =========================== */
+:root {
+    --primary: #0066cc;
+    --primary-dark: #004999;
+    --secondary: #00a8e8;
+    --green: #00ff88;
+    --dark: #1a1a2e;
+    --light: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark);
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, var(--dark) 0%, #16213e 100%);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    color: white !important;
+}
+
+.logo-main {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo-main .green {
+    color: var(--green);
+}
+
+.logo-subtitle {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--green) !important;
+}
+
+.search-form {
+    position: relative;
+}
+
+.search-form input {
+    border-radius: 25px;
+    padding-right: 40px;
+}
+
+.search-form button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: var(--primary);
+}
+
+/* Hero Carousel */
+header {
+    margin-bottom: 0;
+}
+
+.hero-carousel {
+    margin-top: 76px;
+}
+
+.carousel-item {
+    position: relative;
+    height: 600px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+}
+
+.carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: auto;
+    position: absolute;
+    z-index: 1;
+}
+
+.carousel-caption h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.carousel-caption p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.btn-custom {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-custom:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,168,232,0.4);
+}
+
+/* Sections */
+main section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--dark);
+}
+
+/* Intro Section */
+.intro-section {
+    background: rgb(68, 130, 212);
+    padding: 60px 0;
+}
+
+.intro-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.intro-section p {
+    font-size: 1.2rem;
+    color: #323235;
+    line-height: 1.8;
+}
+
+/* Service Cards */
+.service-card {
+    background: var(--light);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--secondary);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+/* Tabs Section */
+.tabs-section {
+    background: var(--light);
+}
+
+.nav-tabs {
+    border: none;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.nav-tabs .nav-link {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    margin: 0 0.5rem;
+    padding: 1rem 1.5rem;
+    color: var(--dark);
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: var(--secondary);
+}
+
+.nav-tabs .nav-link.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.tab-content {
+    background: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Stats Section */
+.stats-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.stat-card h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Clients Carousel */
+.clients-section {
+    background: rgb(139, 178, 233);
+}
+
+.clients-carousel {
+    overflow: hidden;
+    position: relative;
+    padding: 2rem 0;
+}
+
+.clients-track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    width: max-content;
+}
+
+.client-logo {
+    width: 150px;
+    height: 80px;
+    margin: 0 2rem;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: all 0.3s;
+}
+
+.client-logo:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-section h3 {
+    color: var(--green);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-contact li {
+    list-style: none;
+    padding: 0.3rem 0;
+}
+
+.footer-cta-btn {
+    background: var(--green);
+    color: var(--dark);
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.footer-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,255,136,0.3);
+    color: var(--dark);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 2rem;
+    padding-top: 1rem;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* Botón flotante de WhatsApp (ya lo tienes) */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: all 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37,211,102,0.5);
+}
+
+/* Botón flotante del Chatbot */
+.chatbot-float {
+    position: fixed;
+    bottom: 105px;      /* un poco más arriba que WhatsApp */
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, #0066cc 0%, #00a8e8 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.chatbot-float:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(37,99,235,0.6);
+    opacity: 0.95;
+}
+
+/* Ventana del Chatbot */
+.chatbot-window {
+    position: fixed;
+    bottom: 105px;
+    right: 100px;
+    width: 320px;
+    max-width: 90vw;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(15,23,42,0.35);
+    border: 1px solid rgba(148,163,184,0.6);
+    display: none;        /* se muestra con JS */
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 998;
+    font-size: 0.9rem;
+}
+
+/* Cuando está visible */
+.chatbot-window.open {
+    display: flex;
+}
+
+/* Cabecera */
+.chatbot-header {
+    background: linear-gradient(135deg, #0b1120 0%, #1d4ed8 60%, #00a8e8 100%);
+    color: #ffffff;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.chatbot-header small {
+    opacity: 0.9;
+    font-size: 0.75rem;
+}
+
+.chatbot-close {
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+/* Área de mensajes */
+.chatbot-body {
+    padding: 10px;
+    max-height: 260px;
+    overflow-y: auto;
+    background: #f9fafb;
+}
+
+/* Mensajes */
+.chatbot-message {
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    line-height: 1.4;
+}
+
+.chatbot-message.bot {
+    background: #e5f0ff;
+    color: #1f2933;
+    align-self: flex-start;
+}
+
+.chatbot-message.user {
+    background: #0066cc;
+    color: #ffffff;
+    align-self: flex-end;
+}
+
+/* Área de input */
+.chatbot-input-area {
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    gap: 6px;
+    background: #ffffff;
+}
+
+.chatbot-input {
+    flex: 1;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    outline: none;
+}
+
+.chatbot-input:focus {
+    border-color: #0066cc;
+    box-shadow: 0 0 0 1px rgba(37,99,235,0.25);
+}
+
+.chatbot-send {
+    border-radius: 999px;
+    border: none;
+    background: #0066cc;
+    color: #ffffff;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.5);
+}
+
+.chatbot-send:hover {
+    background: #004999;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .chatbot-window {
+        right: 16px;
+        bottom: 100px;
+        width: calc(100% - 32px);
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 500px;
+    }
+
+    .carousel-caption h1 {
+        font-size: 2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .stat-card h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* ===========================
+   LOGIN FLOTANTE (LIMPIO)
+   =========================== */
+
+/* Fondo oscuro con blur */
+.login-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+}
+
+/* Caja principal */
+.login-box {
+    background: #fafafa;
+    border-radius: 18px;
+    max-width: 420px;
+    width: 100%;
+    padding: 20px 22px 24px;
+    position: relative;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.5);
+    transform: translateY(10px);
+    animation: login-pop 0.22s ease-out forwards;
+}
+
+/* Animación de entrada */
+@keyframes login-pop {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Botón cerrar */
+.login-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #9ca3af;
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+.login-close:hover {
+    color: #111827;
+    transform: scale(1.05);
+}
+
+/* Evitar scroll del body cuando el login está abierto */
+body.login-open {
+    overflow: hidden;
+}
+
+/* ===========================
+   TABS LOGIN / REGISTRO
+   =========================== */
+
+.login-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.login-tab-btn {
+    flex: 1;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #4b5563;
+    transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.login-tab-btn.active {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.35);
+}
+
+/* Botón principal (ya lo usas en varias páginas) */
+.btn-custom {
+    border-radius: 999px;
+    background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.btn-custom:hover {
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+    transform: translateY(-1px);
+}
+
+/* ===========================
+   PANEL DE TAREAS
+   =========================== */
+
+/* Título del panel */
+.tasks-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.tasks-title-icon {
+    font-size: 1.4rem;
+}
+
+.tasks-subtitle {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+/* Filtros (Todos / Formulario / Chatbot / Manual) */
+#tasksFilter {
+    display: inline-flex;
+    gap: 6px;
+    border-radius: 999px;
+    padding: 3px;
+    background: #f3f4f6;
+    margin-top: 4px;
+}
+
+#tasksFilter .btn {
+    border-radius: 999px;
+    border: none;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    color: #4b5563;
+    background: transparent;
+}
+#tasksFilter .btn.active {
+    background: #111827;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
+}
+
+/* Lista de tareas como columnas flex */
+.tasks-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0 0;
+    max-height: 260px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Tarjeta base de tarea */
+.task-item {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.task-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.18);
+    border-color: #cbd5f5;
+}
+
+/* Contenido principal de la tarea */
+.task-item .task-main {
+    flex: 1;
+    margin-right: 8px;
+}
+.task-item .task-main strong {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #6b7280;
+    display: block;
+}
+.task-item .task-main small {
+    font-size: 0.72rem;
+    color: #9ca3af;
+}
+.task-item .task-text {
+    margin-top: 4px;
+    font-size: 0.86rem;
+    color: #111827;
+}
+
+/* Botón eliminar */
+.task-item .btn-outline-danger {
+    border-radius: 10px;
+    padding: 2px 7px;
+    font-size: 0.8rem;
+    border-color: #fecaca;
+    color: #b91c1c;
+    background: #fef2f2;
+}
+.task-item .btn-outline-danger:hover {
+    background: #b91c1c;
+    color: #ffffff;
+    border-color: #b91c1c;
+}
+
+/* Colores de borde por origen */
+.task-item[data-source="chatbot"] {
+    border-left: 4px solid #2563eb;
+}
+.task-item[data-source="formulario"] {
+    border-left: 4px solid #16a34a;
+}
+.task-item[data-source="manual"] {
+    border-left: 4px solid #f59e0b;
+}
+
+/* Campo "Agregar tarea" */
+#manualTaskForm .form-label {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+#manualTaskForm .btn-primary {
+    border-radius: 0 999px 999px 0;
+}
+
+/* Scrollbar (solo navegadores WebKit) */
+.tasks-list::-webkit-scrollbar {
+    width: 6px;
+}
+.tasks-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+.tasks-list::-webkit-scrollbar-thumb {
+    background-color: #cbd5f5;
+    border-radius: 999px;
+}
+/* Estilo específico para el botón Cerrar sesión */
+#logoutBtn {
+    background: #5998e9;      /* color de fondo */
+    color: #ffffff;           /* texto blanco */
+    border-radius: 999px;
+    border: none;
+    font-weight: 500;
+}
+
+#logoutBtn:hover {
+    background: #040020;      /* color al pasar el mouse */
+}
+
+/* ===========================
+   PANEL PUBLICITARIO
+   =========================== */
+
+ /* Overlay genérico para modales */
+  .modal-overlay {
+    display: none;                /* oculto por defecto */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+  }
+
+  .modal-overlay.is-visible {
+    display: flex;
+  }
+
+ /* Modal PDF  */
+#pdfModal iframe {
+  width: 30vw;         
+  height: 50vh;         
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px #0007;
+  background: #fff;
+}
+
+
+  #cerrarbtn {
+    margin-top: 25px;
+    padding: 10px 20px;
+    background-color: #4696f1;
+    color: rgb(0, 0, 10);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    border: none;
+  }
+  #cerrarbtn:hover {
+    background-color: #5ee264;
+  }
+
+  /* Modal Promocional */
+  #promoModal {
+    background: rgba(1, 1, 12, 0.699);
+    z-index: 10000;
+  }
+
+  #promoModal .promo-content {
+    background: rgb(0, 0, 0);
+    border-radius: 18px;
+    box-shadow: 0 10px 40px rgba(54, 52, 52, 0.945);
+    max-width: 400px;
+    width: 150%;
+    padding: 30px 30px 30px 28px;
+    text-align: center;
+    position: relative;
+    animation: popup-in 0.35s;
+  }
+
+  @keyframes popup-in {
+    0% {
+      transform: scale(.7);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  #promoModal img {
+    margin-bottom: 18px;
+  }
+  #promoModal h2 {
+    margin-bottom: 12px;
+    color: #eb0b3cec;
+  }
+  #promoModal .btn-promo {
+    display: inline-block;
+    background: #a0eb9d;
+    color: rgb(3, 3, 3);
+    padding: 10px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  #promoModal .btn-cerrar {
+    margin-top: 8px;
+    padding: 8px 16px;
+    background-color: #e47d70;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #promoModal .btn-cerrar:hover {
+    background-color: #eb0000;
+  }
